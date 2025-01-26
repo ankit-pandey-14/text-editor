@@ -3,16 +3,39 @@ import DummyPerson from '../../../assets/dummy-person.jpg';
 
 import CustomButton from '../../../components/customButton';
 import CustomIconImage from '../../../components/customIconImage';
+import CustomText from '../../../components/customText';
+
+
+const fontIcons = [
+    { key: 'F1', icon: 'bold', title: 'Bold' },
+    { key: 'F2', icon: 'italic', title: 'Italic' },
+    { key: 'F3', icon: 'textStrike', title: 'Text Strike' },
+    { key: 'F4', icon: 'smiley', title: 'Smiley' },
+];
+const attachmentIcons = [
+    { key: 'A1', icon: 'copy', title: 'Copy' },
+    { key: 'A2', icon: 'gallery', title: 'Gallery' },
+    { key: 'A3', icon: 'attachment', title: 'Attachment' },
+];
 
 const WritePostSection = () => {
     return (
         <section className='write-post'>
             <div className='d-flex justify-between align-center top-section'>
-                <h3>Write Post</h3>
+                <h2>Write Post</h2>
 
                 <div className='d-flex align-center right-part'>
                     <CustomButton
-                        title={'Check Score'}
+                        title={
+                            <CustomText
+                                leftIcon={'speedMeter'}
+                                leftAltText={'Check Score'}
+                                text={'Credit Score'}
+                                classes={'d-flex align-center btn-text'}
+                                iconClasses={'btn-icon'}
+                            />
+                        }
+                        tooltip={'Credit Score'}
                         type='default'
                         onClick={() => {}}
                     />
@@ -29,10 +52,34 @@ const WritePostSection = () => {
             </div>
 
             <div className='d-flex justify-between align-center toolbar'>
-                <div className='d-flex'>
-                    
+                <div className='d-flex icons'>
+                    {
+                        fontIcons.map((fontIcon) => {
+                            return (
+                                <CustomIconImage
+                                    key={fontIcon?.key}
+                                    icon={fontIcon?.icon}
+                                    tooltip={fontIcon?.title}
+                                    classes={'cursor-pointer'}
+                                />
+                            );
+                        })
+                    }
                 </div>
-                <div className='d-flex'></div>
+                <div className='d-flex icons'>
+                    {
+                        attachmentIcons.map((attachmentIcon) => {
+                            return (
+                                <CustomIconImage
+                                    key={attachmentIcon?.key}
+                                    icon={attachmentIcon?.icon}
+                                    tooltip={attachmentIcon?.title}
+                                    classes={'cursor-pointer'}
+                                />
+                            );
+                        })
+                    }
+                </div>
             </div>
         </section>
     );

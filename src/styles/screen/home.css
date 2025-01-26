@@ -25,14 +25,28 @@
     border-bottom: 2px solid #ccc;
     padding: 14px;
 }
-.write-post .top-section h3 {
-    font-weight: 600;
+.write-post .top-section h2 {
+    font-weight: 700;
+    color: #222;
+}
+.right-part .btn-text {
+    gap: 4px;
+    color: #333;
+}
+.right-part .btn-icon {
+    width: 14px;
+    height: 14px;
 }
 
 .write-post .profile-box {
     border-left: 2px solid #ccc;
     padding-left: 14px;
     gap: 4px;
+}
+
+.toolbar .icons {
+    gap: 23px;
+    color: #777;
 }
 
 

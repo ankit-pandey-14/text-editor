@@ -1,28 +1,48 @@
 import { memo } from "react"
 import CustomIconImage from "../customIconImage";
 
-function CustomText({leftIcon, rightIcon, leftAltText, rightAltText, tooltip, text}){
+function CustomText({
+    leftIcon,
+    rightIcon,
+    leftAltText,
+    rightAltText,
+    tooltip,
+    text,
+    classes,
+    iconClasses,
+    textClasses,
+}){
     return (
-        <div>
+        <div className={classes}>
             {
-                leftIcon ? 
-                <CustomIconImage 
-                    icon={leftIcon}
-                    tooltip={tooltip}
-                    altText={leftAltText || ''}
-                    onClick={()=>{}}
-                /> 
+                leftIcon
+                ? (
+                    <CustomIconImage 
+                        icon={leftIcon}
+                        tooltip={tooltip}
+                        altText={leftAltText || ''}
+                        onClick={()=>{}}
+                        classes={iconClasses}
+                    /> 
+                )
                 : null
             }
-            <p>{text}</p>
             {
-                rightIcon ? 
-                <CustomIconImage
-                    icon={rightIcon}
-                    tooltip={tooltip}
-                    altText={rightAltText || ''}
-                    onClick={()=>{}}
-                /> 
+                text
+                ? <p className={textClasses}>{text}</p>
+                : null
+            }
+            {
+                rightIcon
+                ? (
+                    <CustomIconImage
+                        icon={rightIcon}
+                        tooltip={tooltip}
+                        altText={rightAltText || ''}
+                        onClick={()=>{}}
+                        classes={iconClasses}
+                    />
+                ) 
                 : null
             }
         </div>
