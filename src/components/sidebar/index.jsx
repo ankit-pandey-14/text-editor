@@ -1,6 +1,7 @@
 import { memo } from "react";
 import '../../styles/components/sidebar.css';
 import CustomButton from "../customButton";
+import CustomText from "../customText";
 
 const SideBar = () => {
     return (
@@ -8,11 +9,18 @@ const SideBar = () => {
             {/* Sidebar */}
 
             <CustomButton
-                title={'Write Post'}
+                title={
+                    <CustomText
+                        leftIcon={'edit'}
+                        tooltip={'Edit Icon'}
+                        text={'Write Post'}
+                    />
+                }
                 onClick={() => {}}
                 type="primary"
-                classes={'d-block'}
+                classes={'d-block write-post-btn'}
             />
+
         </aside>
     );
 };
