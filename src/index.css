@@ -1,0 +1,38 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+#root {
+  height: 100%;
+}
+
+.d-block {
+  display: block;
+}
+
+/* flex layout */
+.d-flex {
+  display: flex;
+}
+
+
+/* grid layout */
+
+.d-grid {
+  display: grid;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

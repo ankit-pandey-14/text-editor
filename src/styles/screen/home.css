@@ -1,0 +1,19 @@
+.home-screen {
+    border: 1px solid red;
+    grid-template-columns: 200px 1fr 1fr;
+    height: 100%;
+}
+
+
+/* write post */
+
+.write-post {
+    border: 1px solid blue;
+}
+
+
+/* preview post */
+
+.preview-post {
+    border: 1px solid green;
+}
