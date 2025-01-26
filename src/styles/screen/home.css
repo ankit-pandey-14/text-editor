@@ -10,6 +10,13 @@
 .write-post {
     border: 1px solid blue;
 }
+.default-padding {
+    padding: 14px;
+}
+.default-border {
+    border-bottom: 2px solid #ccc;
+}
+
 .write-post .profile {
     width: 30px;
     height: 30px;
@@ -20,20 +27,12 @@
     gap: 14px;
 }
 
-.write-post .top-section,
-.write-post .toolbar {
-    border-bottom: 2px solid #ccc;
-    padding: 14px;
-}
 .write-post .top-section h2 {
     font-weight: 700;
     color: #222;
 }
-.right-part .btn-text {
-    gap: 4px;
-    color: #333;
-}
-.right-part .btn-icon {
+
+.btn-icon {
     width: 14px;
     height: 14px;
 }
@@ -44,9 +43,15 @@
     gap: 4px;
 }
 
-.toolbar .icons {
+.toolbar-icons {
     gap: 23px;
     color: #777;
+}
+
+.text-area {
+    /* border: 1px solid purple; */
+    height: calc(100vh - 240px);
+    overflow-y: auto;
 }
 
 
