@@ -27,6 +27,9 @@ body {
 .gap-4 {
   gap: 4px;
 }
+.gap-6{
+  gap: 6px;
+}
 
 .d-block {
   display: block;
@@ -41,6 +44,9 @@ body {
 }
 .align-center {
   align-items: center;
+}
+.justify-center {
+  justify-content: center;
 }
 
 

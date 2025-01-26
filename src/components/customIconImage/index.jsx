@@ -12,8 +12,12 @@ import { RiAttachmentLine } from "react-icons/ri";
 import { MdOutlineStrikethroughS } from "react-icons/md";
 import { BiTachometer } from "react-icons/bi";
 import { IoSend } from "react-icons/io5";
-import { AiFillSchedule } from "react-icons/ai";
-
+import { BsCalendar2Fill } from "react-icons/bs";
+import { RxDragHandleVertical } from "react-icons/rx";
+import { HiLightBulb } from "react-icons/hi";
+import { FaArrowTrendUp } from "react-icons/fa6";
+import { AiTwotoneIdcard } from "react-icons/ai";
+import { BsStars } from "react-icons/bs";
 
 // list of icons
 const iconObj = {
@@ -27,7 +31,13 @@ const iconObj = {
     attachment: <RiAttachmentLine />,
     speedMeter: <BiTachometer />,
     send: <IoSend />,
-    schedule: <AiFillSchedule />
+    schedule: <BsCalendar2Fill />,
+    postGenerator: <BsStars />,
+    hiLightBulb: <HiLightBulb />,
+    verticalMenu: <RxDragHandleVertical />,
+    post: <AiTwotoneIdcard />,
+    upArrow: <FaArrowTrendUp />,
+
 };
 
 
