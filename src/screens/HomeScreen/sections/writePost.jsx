@@ -8,9 +8,9 @@ const WritePostSection = () => {
     return (
         <section className='write-post'>
             <div className='d-flex justify-between align-center top-section'>
-                <h2>Write Post</h2>
+                <h3>Write Post</h3>
 
-                <div className='d-flex align-center left-part'>
+                <div className='d-flex align-center right-part'>
                     <CustomButton
                         title={'Check Score'}
                         type='default'
@@ -26,6 +26,13 @@ const WritePostSection = () => {
                         <div>+</div>
                     </div>
                 </div>
+            </div>
+
+            <div className='d-flex justify-between align-center toolbar'>
+                <div className='d-flex'>
+                    
+                </div>
+                <div className='d-flex'></div>
             </div>
         </section>
     );
