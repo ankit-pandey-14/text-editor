@@ -31,6 +31,12 @@ body {
   gap: 6px;
 }
 
+
+/* font-weights */
+.fw-medium {
+  font-weight: 600;
+}
+
 .d-block {
   display: block;
 }
@@ -55,6 +61,7 @@ body {
   display: grid;
 }
 
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -74,4 +81,14 @@ img {
 }
 .text-black {
   color: #333;
+}
+.text-disabled {
+  color: #777;
+}
+
+
+
+/* margin */
+.mx-auto {
+  margin: 0 auto;
 }

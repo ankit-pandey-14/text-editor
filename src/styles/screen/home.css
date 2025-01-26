@@ -4,17 +4,25 @@
     height: 100%;
 }
 
+/* custom styling for home screen */
+.height-65 {
+    height: 65px;
+}
+.height-45 {
+    height: 45px;
+}
+.p-x-14 {
+    padding: 0 14px;
+}
+.border-down {
+    border-bottom: 2px solid #ccc;
+}
 
-/* write post */
 
+
+/* write post section styling */
 .write-post {
     border: 1px solid blue;
-}
-.default-padding {
-    padding: 14px;
-}
-.default-border {
-    border-bottom: 2px solid #ccc;
 }
 
 .write-post .profile {
@@ -22,19 +30,19 @@
     height: 30px;
     border-radius: 50%;
 }
-.write-post .top-section,
 .write-post .right-part {
     gap: 14px;
 }
 
-.write-post .top-section h2 {
+.write-post h2.top-section-heading {
     font-weight: 700;
     color: #222;
 }
 
 .btn-icon {
-    width: 14px;
-    height: 14px;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .write-post .profile-box {
@@ -49,14 +57,39 @@
 }
 
 .text-area {
-    /* border: 1px solid purple; */
-    height: calc(100vh - 240px);
+    height: calc(100vh - 223px);
     overflow-y: auto;
 }
 
 
-/* preview post */
+/* preview post section styling */
+.preview-section {
+    border: 1px solid green;
+}
+
+.devices {
+    gap: 23px;
+}
+.device-icon {
+    font-size: 22px;
+}
+.active-device {
+    color: #3FA2F6;
+    background-color: #cfe0ef;
+    padding: 3px;
+    border-radius: 10px;
+}
 
 .preview-post {
-    border: 1px solid green;
+    background-color: #ddd;   
+    padding: 14px 0;
+    height: calc(100% - 66px);
+}
+
+.card {
+    margin-top: 14px;
+    width: 70%;
+    padding: 9px;
+    border-radius: 9px;
+    background-color: #fff;
 }
