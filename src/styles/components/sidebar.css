@@ -4,6 +4,25 @@
 }
 
 .side-bar .write-post-btn {
-    padding: 12px 14px;
-    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    padding: 8px 14px;
+    border-radius: 25px;
+}
+
+.edit-icon {
+    font-size: 26px;
+}
+
+.text-size {
+    font-size: 19px;
+}
+
+.item-icon{
+    font-size: 19px;
+}
+
+.side-bar-list{
+    padding: 6px;
+    gap: 8px;
 }
