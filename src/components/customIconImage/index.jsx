@@ -18,7 +18,6 @@ import { HiLightBulb } from "react-icons/hi";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { AiTwotoneIdcard } from "react-icons/ai";
 import { BsStars } from "react-icons/bs";
-import { AiFillSchedule } from "react-icons/ai";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { MdTabletMac } from "react-icons/md";
 import { FaDesktop } from "react-icons/fa";
