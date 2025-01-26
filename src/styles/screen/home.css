@@ -9,6 +9,22 @@
 
 .write-post {
     border: 1px solid blue;
+    padding: 9px 5px;
+}
+.write-post .profile {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.write-post .top-section,
+.write-post .left-part {
+    gap: 14px;
+}
+
+.write-post .profile-box {
+    border-left: 2px solid #ccc;
+    padding-left: 14px;
+    gap: 4px;
 }
 
 

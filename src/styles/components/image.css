@@ -1,0 +1,7 @@
+.custom-image {
+    overflow: hidden;
+}
+
+.img-contain img {
+    object-fit: contain;
+}
