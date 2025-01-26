@@ -50,7 +50,7 @@ const PreviewPostSection = () => {
                 />
 
                 <div className="mx-auto card">
-
+                    <div></div>
                 </div>
             </div>
         </section>
