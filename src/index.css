@@ -25,14 +25,27 @@ body {
 .d-flex {
   display: flex;
 }
+.justify-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
 
 
 /* grid layout */
-
 .d-grid {
   display: grid;
 }
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+
+/* image styling */
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

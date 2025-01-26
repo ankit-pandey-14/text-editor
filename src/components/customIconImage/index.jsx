@@ -1,3 +1,7 @@
+import { memo } from 'react';
+import '../../styles/components/image.css';
+
+
 const CustomIconImage = ({ icon, imageSrc, altText, tooltip, onClick, classes }) => {
     return (
         <div
@@ -8,9 +12,10 @@ const CustomIconImage = ({ icon, imageSrc, altText, tooltip, onClick, classes })
             <img
                 src={ icon || imageSrc }
                 alt={altText}
+                loading='lazy'
             />
         </div>
     );
 };
 
-export default CustomIconImage;
+export default memo(CustomIconImage);
