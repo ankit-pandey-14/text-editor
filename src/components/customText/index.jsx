@@ -1,14 +1,15 @@
 import { memo } from "react"
 import CustomIconImage from "../customIconImage";
 
-function CustomText({leftICon, rightIcon, leftAltText, rightAltText, text}){
+function CustomText({leftIcon, rightIcon, leftAltText, rightAltText, tooltip, text}){
     return (
         <div>
             {
-                leftICon ? 
+                leftIcon ? 
                 <CustomIconImage 
-                    icon={leftICon}
-                    altText={leftAltText}
+                    icon={leftIcon}
+                    tooltip={tooltip}
+                    altText={leftAltText || ''}
                     onClick={()=>{}}
                 /> 
                 : null
@@ -18,7 +19,8 @@ function CustomText({leftICon, rightIcon, leftAltText, rightAltText, text}){
                 rightIcon ? 
                 <CustomIconImage
                     icon={rightIcon}
-                    altText={rightAltText}
+                    tooltip={tooltip}
+                    altText={rightAltText || ''}
                     onClick={()=>{}}
                 /> 
                 : null
