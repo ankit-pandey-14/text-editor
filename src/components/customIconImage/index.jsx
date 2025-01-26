@@ -13,6 +13,9 @@ import { MdOutlineStrikethroughS } from "react-icons/md";
 import { BiTachometer } from "react-icons/bi";
 import { IoSend } from "react-icons/io5";
 import { AiFillSchedule } from "react-icons/ai";
+import { IoMdPhonePortrait } from "react-icons/io";
+import { MdTabletMac } from "react-icons/md";
+import { FaDesktop } from "react-icons/fa";
 
 
 // list of icons
@@ -27,7 +30,10 @@ const iconObj = {
     attachment: <RiAttachmentLine />,
     speedMeter: <BiTachometer />,
     send: <IoSend />,
-    schedule: <AiFillSchedule />
+    schedule: <AiFillSchedule />,
+    phone: <IoMdPhonePortrait />,
+    tablet: <MdTabletMac />,
+    desktop: <FaDesktop />,
 };
 
 

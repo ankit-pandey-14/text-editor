@@ -21,8 +21,8 @@ const attachmentIcons = [
 const WritePostSection = () => {
     return (
         <section className='write-post'>
-            <div className='d-flex justify-between align-center default-padding default-border top-section'>
-                <h2>Write Post</h2>
+            <div className='d-flex justify-between align-center p-x-14 height-65 border-down'>
+                <h2 className='top-section-heading'>Write Post</h2>
 
                 <div className='d-flex align-center right-part'>
                     <CustomButton
@@ -51,7 +51,7 @@ const WritePostSection = () => {
                 </div>
             </div>
 
-            <div className='d-flex justify-between align-center default-padding default-border'>
+            <div className='d-flex justify-between align-center p-x-14 height-45 border-down'>
                 <div className='d-flex toolbar-icons'>
                     {
                         fontIcons.map((fontIcon) => {
@@ -86,13 +86,13 @@ const WritePostSection = () => {
             
 
             <div>
-                <div className='d-flex justify-between align-center default-padding default-border text-black'>
+                <div className='d-flex justify-between align-center p-x-14 height-45 border-down text-black'>
                     <p>Last saved at Oct 4, 2023, 10:34 AM</p>
 
                     <p>254 characters</p>
                 </div>
 
-                <div className='d-flex justify-between align-center default-padding'>
+                <div className='d-flex justify-between align-center p-x-14 height-65'>
                     <CustomButton
                         title={'Save as Draft'}
                         type='default'
