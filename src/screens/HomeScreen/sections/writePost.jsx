@@ -18,38 +18,19 @@ const attachmentIcons = [
     { key: 'A3', icon: 'attachment', title: 'Attachment' },
 ];
 
-const tooltipElements = [
-    {
-        key:1,
-        icon: "bold",
-        tooltip: "Bold"
-    },
-    {
-        key:2,
-        icon: "italic",
-        tooltip: "Italic"
-    },
-    {
-        key:3,
-        icon: "underline",
-        tooltip: "UnderLine",
-    },
-    {
-        key:4,
-        icon: "strike",
-        tooltip: "Text Strike",
-    },
-    {
-        key:5,
-        icon: "link",
-        tooltip: "Url"
-    },
+const tooltipIcons = [
+    { key: 'T1', icon: "bold", tooltip: "Bold" },
+    { key: 'T2', icon: "italic", tooltip: "Italic" },
+    { key: 'T3', icon: "underline", tooltip: "UnderLine", },
+    { key: 'T4', icon: "strike", tooltip: "Text Strike", },
+    { key: 'T5', icon: "link", tooltip: "Url" },
 ]
 
 const WritePostSection = ({ setPost }) => {
 
     const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
     const [showTooltip, setShowTooltip] = useState(false);
+    const [activeFont, setActiveFont] = useState('');
 
     const contentRef = useRef();
 
@@ -62,9 +43,6 @@ const WritePostSection = ({ setPost }) => {
             const range = selection.getRangeAt(0);
             const rect = range.getBoundingClientRect();
 
-            console.log("rect", rect)
-    
-            // Tooltip positioning logic
             setTooltipPosition({
                 x: rect.left + window.scrollX,
                 y: rect.top + window.scrollY - 40,
@@ -149,7 +127,7 @@ const WritePostSection = ({ setPost }) => {
                         setPost(contentRef.current.innerHTML);
                     }}
                 />
-                { console.log("tooltipPosition", tooltipPosition) }
+
                 {showTooltip && (
                     <div className='d-flex text-tooltip'
                         style={{
@@ -158,23 +136,26 @@ const WritePostSection = ({ setPost }) => {
                         }}
                     >
                         {
-                            tooltipElements.map((ele)=>{
+                            tooltipIcons.map((tooltipIcon)=>{
+                                const { key, icon, tooltip } = tooltipIcon;
                                 return (
                                     <CustomButton
-                                        key={ele.key}
+                                        key={key}
                                         title={
                                             <CustomIconImage
-                                                icon={ele?.icon}
+                                                icon={icon}
                                             />
                                         }
-                                        tooltip={ele?.tooltip}
-                                        classes={"cursor-pointer b-none p-0"}
+                                        tooltip={tooltip}
+                                        classes={`cursor-pointer b-none p-0 tooltip-font ${activeFont === icon ? 'active-font' : ''}`}
                                         onClick={()=>{
-                                            if (ele?.icon === 'bold') {
+                                            setActiveFont(icon);
+
+                                            if (icon === 'bold') {
                                                 document.execCommand("bold");
-                                            } else if(ele?.icon === "italic") {
+                                            } else if(icon === "italic") {
                                                 document.execCommand("italic")
-                                            } else if(ele?.icon === "underline") {
+                                            } else if(icon === "underline") {
                                                 document.execCommand("underline")
                                             }
                                         }}
