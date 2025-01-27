@@ -20,5 +20,5 @@ This project also involves **[html-react-parser package](https://www.npmjs.com/p
 
 ## Contribution
 **Ankit Pandey**
-**[Github]()**
-**[LinkedIn]()**
+- **[Github](https://github.com/ankit-pandey-14)**
+- **[LinkedIn](https://www.linkedin.com/in/ankit-pandey-7733a6208/)**
