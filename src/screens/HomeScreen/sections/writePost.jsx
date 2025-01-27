@@ -46,12 +46,10 @@ const tooltipElements = [
     },
 ]
 
-const WritePostSection = ({ post, setPost }) => {
+const WritePostSection = ({ setPost }) => {
 
     const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
     const [showTooltip, setShowTooltip] = useState(false);
-    const [currentText,setcurrentText] = useState("");
-    const [selectionRange, setSelectionRange] = useState(null)
 
     const contentRef = useRef();
 
@@ -59,11 +57,9 @@ const WritePostSection = ({ post, setPost }) => {
         const selection = window.getSelection();
         const text = selection.toString();
         console.log("text",text)
-        setcurrentText(text)
     
         if (text.length > 0) {
             const range = selection.getRangeAt(0);
-            setSelectionRange(range)
             const rect = range.getBoundingClientRect();
     
             // Tooltip positioning logic
@@ -76,19 +72,6 @@ const WritePostSection = ({ post, setPost }) => {
             setShowTooltip(false);
         }
     };
-
-    const applyStyle = (style) => {
-        if (selectionRange) {
-            const selection = window.getSelection();
-            const range = selectionRange;
-
-            const span = document.createElement('span');
-            span.style[style] = 'bold'; // Apply style (bold, italic, etc.)
-            range.surroundContents(span); // Surround the selected content with the styled element
-        }
-    };
-
-    console.log("currentTextOutside",currentText)
 
     return (
         <section className='write-post'>
@@ -159,16 +142,21 @@ const WritePostSection = ({ post, setPost }) => {
                         position:"relative"
                     }}
                 >
-                <textarea
-                    value={post}
-                    onChange={(e) => {
-                        setPost(e?.target?.value)
-                    }}
-                    placeholder='Write a post'
+                <p
                     ref={contentRef}
                     onMouseUp={handleTextSelection}
-                    contentEditable="true"
-                />
+                    contentEditable={true}
+                    style={{
+                      border: "1px solid #ccc",
+                      padding: "10px",
+                      borderRadius: "5px",
+                      minHeight: "100px",
+                    }}
+                    onInput={() => {
+                        setPost(contentRef.current.innerHTML);
+                      }}
+                > hello there
+                </p>
                 {showTooltip && (
                     <div className='d-flex text-toolTip'
                         style={{
@@ -176,39 +164,46 @@ const WritePostSection = ({ post, setPost }) => {
                           left: tooltipPosition?.x,
                         }}
                     >
-                      {
-                        tooltipElements.map((ele)=>{
-                            return (
-                                <CustomIconImage
-                                    key={ele.key}
-                                    icon={ele?.icon}
-                                    tooltip={ele?.tooltip}
-                                    classes={"cursor-pointer"}
-                                    onClick={()=>{
-                                        if (ele?.icon === 'bold') {
-                                            applyStyle('fontWeight');
+                        {
+                            tooltipElements.map((ele)=>{
+                                return (
+                                    <CustomButton
+                                        key={ele.key}
+                                        title={
+                                            <CustomIconImage
+                                                icon={ele?.icon}
+                                            />
                                         }
-                                    }}
-                                />
-                            )
-                        })
-                      }
-                      <div className='cross'>
-                        <CustomIconImage
-                            icon={'close'}
-                            tooltip={"close"}
-                            classes={"cursor-pointer"}
-                            onClick={()=>{
-                                const selection = window.getSelection();
-                                selection.removeAllRanges();
-                                setShowTooltip(false)
-                            }}
-                        />
-                      </div>
+                                        tooltip={ele?.tooltip}
+                                        classes={"cursor-pointer b-none p-0"}
+                                        onClick={()=>{
+                                            if (ele?.icon === 'bold') {
+                                                document.execCommand("bold");
+                                            } else if(ele?.icon === "italic") {
+                                                document.execCommand("italic")
+                                            } else if(ele?.icon === "underline") {
+                                                document.execCommand("underline")
+                                            }
+                                        }}
+                                    />
+                                )
+                            })
+                        }
+                        <div className='cross'>
+                            <CustomIconImage
+                                icon={'close'}
+                                tooltip={"close"}
+                                classes={"cursor-pointer"}
+                                onClick={()=>{
+                                    const selection = window.getSelection();
+                                    selection.removeAllRanges();
+                                    setShowTooltip(false)
+                                }}
+                            />
+                        </div>
                     </div>
                 )}
             </div>
-
             <div>
                 <div className='d-flex justify-between align-center p-x-14 height-45 border-down text-black'>
                     <p>Last saved at Oct 4, 2023, 10:34 AM</p>
