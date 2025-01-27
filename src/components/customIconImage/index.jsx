@@ -25,6 +25,14 @@ import { HiOutlineAdjustments } from "react-icons/hi";
 import { GrFan } from "react-icons/gr";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { AiFillThunderbolt } from "react-icons/ai";
+import { FaGlobeAmericas } from "react-icons/fa";
+import { AiOutlineLike } from "react-icons/ai";
+import { FaRegCommentDots } from "react-icons/fa";
+import { LiaShareSolid } from "react-icons/lia";
+import { LuSend } from "react-icons/lu";
+import { PiHandsClapping } from "react-icons/pi";
+import { FaHandHoldingHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 
 
 // list of icons
@@ -52,6 +60,14 @@ const iconObj = {
     featureRequest:<GrFan />,
     wordsGenerated:<BsFillInfoCircleFill />,
     thunder: <AiFillThunderbolt />
+    world: <FaGlobeAmericas />,
+    like: <AiOutlineLike />,
+    comment: <FaRegCommentDots />,
+    share: <LiaShareSolid />,
+    sendTilted: <LuSend />,
+    clap: <PiHandsClapping />,
+    support: <FaHandHoldingHeart />,
+    heart: <FaRegHeart />, 
 };
 
 

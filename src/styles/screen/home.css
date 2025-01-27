@@ -14,8 +14,14 @@
 .p-x-14 {
     padding: 0 14px;
 }
+.p-y-14 {
+    padding: 14px 0;
+}
 .border-down {
     border-bottom: 2px solid #ccc;
+}
+.mt-5 {
+    margin-top: 5px;
 }
 
 
@@ -92,4 +98,58 @@
     padding: 9px;
     border-radius: 9px;
     background-color: #fff;
+}
+
+.card-profile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.card .dot {
+    width: 5px;
+    height: 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.profile-info {
+    width: calc(100% - 70px);
+    line-height: 1.3;
+}
+.profile-info h3 {
+    font-weight: 600;
+}
+.profile-info div {
+    font-size: 14px;
+}
+
+.card-actions {
+    /* padding: 9px; */
+    gap: 9px;
+    padding-top: 5px;
+}
+.card-actions .action-icon {
+    font-size: 20px;
+}
+
+.reactions span {
+    font-size: 14px;
+}
+.reaction-icon {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+.like {
+    background-color: #3FA2F6;
+}
+.clap {
+    background-color: #089620;
+}
+.support {
+    background-color: rgb(174, 34, 174);
+}
+.heart {
+    background-color: rgb(216, 79, 79);
 }
