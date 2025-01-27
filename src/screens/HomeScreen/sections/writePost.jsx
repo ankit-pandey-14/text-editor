@@ -18,7 +18,7 @@ const attachmentIcons = [
     { key: 'A3', icon: 'attachment', title: 'Attachment' },
 ];
 
-const WritePostSection = () => {
+const WritePostSection = ({ post, setPost }) => {
     return (
         <section className='write-post'>
             <div className='d-flex justify-between align-center p-x-14 height-65 border-down'>
@@ -82,7 +82,15 @@ const WritePostSection = () => {
                 </div>
             </div>
 
-            <div className='text-area default-padding'></div>
+            <div className='text-area default-padding'>
+                <textarea
+                    value={post}
+                    onChange={(e) => {
+                        setPost(e?.target?.value)
+                    }}
+                    placeholder='Write a post'
+                />
+            </div>
             
 
             <div>

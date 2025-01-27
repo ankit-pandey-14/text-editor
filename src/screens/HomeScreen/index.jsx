@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../styles/screen/home.css';
 
 
@@ -9,11 +9,13 @@ const WritePost = React.lazy(() => import("./sections/writePost"));
 
 
 const HomeScreen = () => {
+    const [post, setPost] = useState('');
+
     return (
         <main className="d-grid home-screen">
             <SideBar />
-            <WritePost />
-            <PreviewPost />
+            <WritePost post={post} setPost={setPost} />
+            <PreviewPost post={post} />
         </main>
     );
 };
