@@ -61,6 +61,8 @@ const WritePostSection = ({ setPost }) => {
         if (text.length > 0) {
             const range = selection.getRangeAt(0);
             const rect = range.getBoundingClientRect();
+
+            console.log("rect", rect)
     
             // Tooltip positioning logic
             setTooltipPosition({
@@ -137,30 +139,21 @@ const WritePostSection = ({ setPost }) => {
                 </div>
             </div>
 
-            <div className='text-area default-padding' 
-                style={{
-                        position:"relative"
-                    }}
-                >
+            <div className='text-area-box default-padding'>
                 <p
                     ref={contentRef}
                     onMouseUp={handleTextSelection}
                     contentEditable={true}
-                    style={{
-                      border: "1px solid #ccc",
-                      padding: "10px",
-                      borderRadius: "5px",
-                      minHeight: "100px",
-                    }}
+                    className='textarea'
                     onInput={() => {
                         setPost(contentRef.current.innerHTML);
-                      }}
-                > hello there
-                </p>
+                    }}
+                />
+                { console.log("tooltipPosition", tooltipPosition) }
                 {showTooltip && (
-                    <div className='d-flex text-toolTip'
+                    <div className='d-flex text-tooltip'
                         style={{
-                          top: "34px",
+                          top: tooltipPosition?.y,
                           left: tooltipPosition?.x,
                         }}
                     >
