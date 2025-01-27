@@ -94,7 +94,7 @@ const WritePostSection = ({ post, setPost }) => {
 
     const contentRef = useRef();
 
-    const [activeFont, setActiveFont] = useState('');
+    const [activeFont, setActiveFont] = useState({});
 
     const handleTextSelection = () => {
         const selection = window.getSelection();
@@ -229,18 +229,35 @@ const WritePostSection = ({ post, setPost }) => {
                                         />
                                     }
                                     tooltip={tooltip}
-                                    classes={`cursor-pointer b-none p-0 tooltip-font ${activeFont === icon ? 'active-font' : ''}`}
+                                    classes={`cursor-pointer b-none p-0 tooltip-font ${activeFont[icon] ? 'active-font' : ''}`}
                                     onClick={()=>{
-                                        setActiveFont((prev) => {
-                                            return prev === icon ? '' : icon;
-                                        });
 
                                         if (icon === 'bold') {
                                             document.execCommand("bold");
+                                            setActiveFont((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    [icon]: !prev[icon],
+                                                };
+                                            });
                                         } else if(icon === "italic") {
-                                            document.execCommand("italic")
+                                            document.execCommand("italic");
+
+                                            setActiveFont((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    [icon]: !prev[icon],
+                                                };
+                                            });
                                         } else if(icon === "underline") {
-                                            document.execCommand("underline")
+                                            document.execCommand("underline");
+
+                                            setActiveFont((prev) => {
+                                                return {
+                                                    ...prev,
+                                                    [icon]: !prev[icon],
+                                                };
+                                            });
                                         }
                                     }}
                                 />

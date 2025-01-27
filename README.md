@@ -19,6 +19,6 @@ A simple text editor with some basic functionality
 This project also involves **[html-react-parser package](https://www.npmjs.com/package/html-react-parser)** hence yo can go through its docs for further learnings.
 
 ## Contribution
-**[Alka Savarn]**
-- **[Github](https://github.com/Alkasavarn02)**
-- **[LinkedIn](https://www.linkedin.com/in/alka-savarn-2a6200272/)**
+**Ankit Pandey**
+**[Github]()**
+**[LinkedIn]()**
