@@ -20,5 +20,5 @@ This project also involves **[html-react-parser package](https://www.npmjs.com/p
 
 ## Contribution
 **[Alka Savarn]**
-**[Github]()**
-**[LinkedIn]()**
+- **[Github](https://github.com/Alkasavarn02)**
+- **[LinkedIn](https://www.linkedin.com/in/alka-savarn-2a6200272/)**
