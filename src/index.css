@@ -21,6 +21,14 @@ body {
   width: fit-content !important;
 }
 
+.b-none {
+  border: none !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
 .gap-5 {
   gap: 5px;
 }
