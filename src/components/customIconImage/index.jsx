@@ -33,6 +33,10 @@ import { LuSend } from "react-icons/lu";
 import { PiHandsClapping } from "react-icons/pi";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
+import { FaTextSlash } from "react-icons/fa6";
+import { FaUnderline } from "react-icons/fa";
+import { AiOutlineLink } from "react-icons/ai";
+import { MdOutlineClose } from "react-icons/md";
 
 
 // list of icons
@@ -67,7 +71,11 @@ const iconObj = {
     sendTilted: <LuSend />,
     clap: <PiHandsClapping />,
     support: <FaHandHoldingHeart />,
-    heart: <FaRegHeart />, 
+    heart: <FaRegHeart />,
+    strike: <FaTextSlash />,
+    underline: <FaUnderline />,
+    link: <AiOutlineLink />,
+    close: <MdOutlineClose />,
 };
 
 
