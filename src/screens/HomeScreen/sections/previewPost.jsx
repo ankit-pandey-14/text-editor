@@ -1,4 +1,5 @@
 import { memo, useState } from "react";
+import ReactHtmlParser from 'html-react-parser';
 import DummyPerson from '../../../assets/dummy-person.jpg';
 
 import CustomIconImage from "../../../components/customIconImage";
@@ -90,7 +91,7 @@ const PreviewPostSection = ({ post }) => {
                     </div>
 
                     <div className="mt-5 card-content">
-                        { post }                        
+                        { ReactHtmlParser(post) }
                     </div>
 
                     <div className="mt-5 border-down d-flex justify-between gap-4 align-center p-y-14">
