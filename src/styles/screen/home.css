@@ -69,10 +69,29 @@
 .text-area textarea {
     resize: none;
     width: 100%;
-    height: 99%;
+    height: 96%;
     border: none;
     outline: none;
     padding: 14px;
+}
+
+.text-toolTip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px 23px;
+    gap: 15px;
+    z-index: 99;
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.cross {
+    border-left: 2px solid #ccc;
+    padding-left: 15px;
+    font-size: 14px;
 }
 
 
