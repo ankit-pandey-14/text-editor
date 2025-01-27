@@ -4,6 +4,7 @@ import DummyPerson from "../../../assets/dummy-person.jpg";
 import CustomButton from "../../../components/customButton";
 import CustomIconImage from "../../../components/customIconImage";
 import CustomText from "../../../components/customText";
+import { countCharactersWithHTMLTags } from "../../../utils/helper";
 
 const fontIcons = [
   { key: "F1", icon: "bold", title: "Bold" },
@@ -16,34 +17,6 @@ const attachmentIcons = [
   { key: "A1", icon: "copy", title: "Copy" },
   { key: "A2", icon: "gallery", title: "Gallery" },
   { key: "A3", icon: "attachment", title: "Attachment" },
-];
-
-const tooltipElements = [
-  {
-    key: 1,
-    icon: "bold",
-    tooltip: "Bold",
-  },
-  {
-    key: 2,
-    icon: "italic",
-    tooltip: "Italic",
-  },
-  {
-    key: 3,
-    icon: "underline",
-    tooltip: "UnderLine",
-  },
-  {
-    key: 4,
-    icon: "strike",
-    tooltip: "Text Strike",
-  },
-  {
-    key: 5,
-    icon: "link",
-    tooltip: "Url",
-  },
 ];
 
 const aiDropDown = [
@@ -106,32 +79,41 @@ const aiDropDown = [
   },
 ];
 
-const WritePostSection = ({ setPost }) => {
-  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [showAiToolBarElement, setshowAiToolBarElement] = useState(false);
+const tooltipIcons = [
+    { key: 'T1', icon: "bold", tooltip: "Bold" },
+    { key: 'T2', icon: "italic", tooltip: "Italic" },
+    { key: 'T3', icon: "underline", tooltip: "UnderLine", },
+    { key: 'T4', icon: "strike", tooltip: "Text Strike", },
+    { key: 'T5', icon: "link", tooltip: "Url" },
+];
 
-  const contentRef = useRef();
+const WritePostSection = ({ post, setPost }) => {
+    const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+    const [showTooltip, setShowTooltip] = useState(false);
+    const [showAiToolBarElement, setshowAiToolBarElement] = useState(false);
 
-  const handleTextSelection = () => {
-    const selection = window.getSelection();
-    const text = selection.toString();
-    console.log("text", text);
+    const contentRef = useRef();
 
-    if (text.length > 0) {
-      const range = selection.getRangeAt(0);
-      const rect = range.getBoundingClientRect();
+    const [activeFont, setActiveFont] = useState('');
 
-      // Tooltip positioning logic
-      setTooltipPosition({
-        x: rect.left + window.scrollX,
-        y: rect.top + window.scrollY - 40,
-      });
-      setShowTooltip(true);
-    } else {
-      setShowTooltip(false);
-    }
-  };
+    const handleTextSelection = () => {
+        const selection = window.getSelection();
+        const text = selection.toString();
+    
+        if (text.length > 0) {
+            const range = selection.getRangeAt(0);
+            const rect = range.getBoundingClientRect();
+
+            setTooltipPosition({
+                x: rect.left + window.scrollX,
+                y: rect.top + window.scrollY - 40,
+            });
+            setShowTooltip(true);
+        } else {
+            setShowTooltip(false);
+        }
+    };
+
 
   return (
     <section className="write-post">
@@ -217,76 +199,75 @@ const WritePostSection = ({ setPost }) => {
         }
       </div>
 
-      <div
-        className="text-area default-padding"
-        style={{
-          position: "relative",
-        }}
-      >
-        <p
-          ref={contentRef}
-          onMouseUp={handleTextSelection}
-          contentEditable={true}
-          style={{
-            border: "1px solid #ccc",
-            padding: "10px",
-            borderRadius: "5px",
-            minHeight: "100px",
-          }}
-          onInput={() => {
-            setPost(contentRef.current.innerHTML);
-          }}
-        >
-          {" "}
-          hello there
-        </p>
-        {showTooltip && (
-          <div
-            className="d-flex text-toolTip"
-            style={{
-              top: "34px",
-              left: tooltipPosition?.x,
-            }}
-          >
-            {tooltipElements.map((ele) => {
-              return (
-                <CustomButton
-                  key={ele.key}
-                  title={<CustomIconImage icon={ele?.icon} />}
-                  tooltip={ele?.tooltip}
-                  classes={"cursor-pointer b-none p-0"}
-                  onClick={() => {
-                    if (ele?.icon === "bold") {
-                      document.execCommand("bold");
-                    } else if (ele?.icon === "italic") {
-                      document.execCommand("italic");
-                    } else if (ele?.icon === "underline") {
-                      document.execCommand("underline");
-                    }
-                  }}
-                />
-              );
-            })}
-            <div className="cross">
-              <CustomIconImage
-                icon={"close"}
-                tooltip={"close"}
-                classes={"cursor-pointer"}
-                onClick={() => {
-                  const selection = window.getSelection();
-                  selection.removeAllRanges();
-                  setShowTooltip(false);
+        <div className='text-area-box default-padding'>
+            <p
+                ref={contentRef}
+                onMouseUp={handleTextSelection}
+                contentEditable={true}
+                className='textarea'
+                onInput={() => {
+                    setPost(contentRef.current.innerHTML);
                 }}
-              />
-            </div>
-          </div>
-        )}
-      </div>
+            />
+
+            {showTooltip && (
+                <div className='d-flex text-tooltip'
+                    style={{
+                        top: tooltipPosition?.y,
+                        left: tooltipPosition?.x,
+                    }}
+                >
+                    {
+                        tooltipIcons.map((tooltipIcon)=>{
+                            const { key, icon, tooltip } = tooltipIcon;
+                            return (
+                                <CustomButton
+                                    key={key}
+                                    title={
+                                        <CustomIconImage
+                                            icon={icon}
+                                        />
+                                    }
+                                    tooltip={tooltip}
+                                    classes={`cursor-pointer b-none p-0 tooltip-font ${activeFont === icon ? 'active-font' : ''}`}
+                                    onClick={()=>{
+                                        setActiveFont((prev) => {
+                                            return prev === icon ? '' : icon;
+                                        });
+
+                                        if (icon === 'bold') {
+                                            document.execCommand("bold");
+                                        } else if(icon === "italic") {
+                                            document.execCommand("italic")
+                                        } else if(icon === "underline") {
+                                            document.execCommand("underline")
+                                        }
+                                    }}
+                                />
+                            )
+                        })
+                    }
+                    <div className='cross'>
+                        <CustomIconImage
+                            icon={'close'}
+                            tooltip={"close"}
+                            classes={"cursor-pointer"}
+                            onClick={()=>{
+                                const selection = window.getSelection();
+                                selection.removeAllRanges();
+                                setShowTooltip(false)
+                            }}
+                        />
+                    </div>
+                </div>
+            )}
+        </div>
+          
       <div>
         <div className="d-flex justify-between align-center p-x-14 height-45 border-down text-black">
           <p>Last saved at Oct 4, 2023, 10:34 AM</p>
 
-          <p>254 characters</p>
+          <p>{countCharactersWithHTMLTags(post) } characters</p>
         </div>
 
         <div className="d-flex justify-between align-center p-x-14 height-65">

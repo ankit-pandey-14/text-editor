@@ -1,9 +1,11 @@
-import { memo, useState } from "react";
+import { memo } from "react";
+import ReactHtmlParser from 'html-react-parser';
 import DummyPerson from '../../../assets/dummy-person.jpg';
 
 import CustomIconImage from "../../../components/customIconImage";
 import CustomButton from "../../../components/customButton";
 import CustomText from "../../../components/customText";
+import { useDeviceType } from "../../../customHooks/useDeviceType";
 
 
 const devicesList = [
@@ -26,8 +28,14 @@ const reactions = [
     { key: 'R4', icon: 'heart', classes: 'heart' },
 ];
 
+const deviceSpecificCard = {
+    'phone': 'card-phone',
+    'tablet': 'card-tablet',
+    'desktop': 'card-desktop',
+};
+
 const PreviewPostSection = ({ post }) => {
-    const [activeDevice, setActiceDevice] = useState('phone');
+    const {activeDevice, setActiceDevice} = useDeviceType();
 
     return (
         <section className="preview-section">
@@ -66,8 +74,8 @@ const PreviewPostSection = ({ post }) => {
                     classes={'w-fit d-block mx-auto'}
                 />
 
-                <div className="mx-auto card">
-                    <div className="d-flex align-start gap-5">
+                <div className={`mx-auto card ${deviceSpecificCard[activeDevice]}`}>
+                    <div className="d-flex align-start gap-5 profile-section">
                         <CustomIconImage
                             imageSrc={DummyPerson}
                             altText={'Dummy Person'}
@@ -77,7 +85,7 @@ const PreviewPostSection = ({ post }) => {
                         <div className="text-disabled profile-info">
                             <h3 className="text-black">Cody Fisher</h3>
                             <div>UI/UX Design | Web & Mobile Design | Front-end | UI Developer</div>
-                            <div className="d-flex gap-4 align-center">
+                            <div className="d-flex gap-4 align-center online">
                                 Now
                                 <span className="dot" />
                                 <CustomIconImage
@@ -90,10 +98,10 @@ const PreviewPostSection = ({ post }) => {
                     </div>
 
                     <div className="mt-5 card-content">
-                        { post }                        
+                        { ReactHtmlParser(post) }
                     </div>
 
-                    <div className="mt-5 border-down d-flex justify-between gap-4 align-center p-y-14">
+                    <div className="mt-5 border-down d-flex justify-between gap-4 align-center p-y-14 reactions-box">
                         <div className="d-flex gap-5 reactions">
                             <div className="d-flex">
                                 {
@@ -130,7 +138,7 @@ const PreviewPostSection = ({ post }) => {
                                         leftIcon={cardAction.icon}
                                         leftAltText={cardAction.text}
                                         text={cardAction.text}
-                                        classes={'cursor-pointer text-disabled d-flex gap-4'}
+                                        classes={'cursor-pointer text-disabled d-flex gap-4 action-icon-box'}
                                         iconClasses={'action-icon'}
                                     />
                                 );

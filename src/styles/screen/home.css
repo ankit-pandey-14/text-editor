@@ -1,7 +1,14 @@
 .home-screen {
-    border: 1px solid red;
-    grid-template-columns: 250px 1fr 1fr;
     height: 100%;
+}
+.home-screen-desktop {
+    grid-template-columns: 250px 1fr 2fr;
+}
+.home-screen-tablet {
+    grid-template-columns: 250px 1fr 1fr;
+}
+.home-screen-phone {
+    grid-template-columns: 250px 1fr 350px;
 }
 
 /* custom styling for home screen */
@@ -62,6 +69,7 @@
     color: #777;
 }
 
+
 .icon-container {
     position: relative;
 }
@@ -92,12 +100,11 @@
     font-size: 17px;
 }
 
-.text-area {
+.text-area-box {
     height: calc(100vh - 223px);
     overflow-y: auto;
 }
-.text-area .textarea {
-    resize: none;
+.text-area-box .textarea {
     width: 100%;
     height: 96%;
     border: none;
@@ -105,16 +112,16 @@
     padding: 14px;
 }
 
-.text-toolTip {
+.text-tooltip {
     position: absolute;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 8px 23px;
-    gap: 15px;
+    gap: 10px;
     z-index: 99;
-    opacity: 0.6;
+    opacity: 0.8;
     font-size: 14px;
 }
 
@@ -122,6 +129,19 @@
     border-left: 2px solid #ccc;
     padding-left: 15px;
     font-size: 14px;
+}
+
+.text-tooltip .tooltip-font {
+    height: 25px;
+    border-radius: 5px;
+}
+.text-tooltip .tooltip-font .custom-image {
+    width: 25px;
+}
+
+.text-tooltip .active-font {
+    background-color: #3FA2F6;
+    color: #fff;
 }
 
 
@@ -151,16 +171,35 @@
 
 .card {
     margin-top: 14px;
-    width: 70%;
     padding: 9px;
     border-radius: 9px;
-    background-color: #fff;
+    background-color: #fff;    
+}
+
+.card-desktop {
+    width: 550px;
+}
+.card-tablet {
+    width: 70%;
+}
+
+.card-phone {
+    width: 90%;
+}
+
+.card-phone .profile-section {
+    flex-direction: column;
 }
 
 .card-profile {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+}
+
+.card-phone .card-profile {
+    border-radius: 5px;
+    margin: 0 auto;
 }
 
 .card .dot {
@@ -174,6 +213,11 @@
     width: calc(100% - 70px);
     line-height: 1.3;
 }
+.card-phone .profile-info {
+    width: 100%;
+    text-align: center;
+}
+
 .profile-info h3 {
     font-weight: 600;
 }
@@ -181,18 +225,17 @@
     font-size: 14px;
 }
 
+.card-phone .online {
+    justify-content: center;
+}
+
 .card-content {
     min-height: 20px;
     height: auto;
 }
 
-.card-actions {
-    /* padding: 9px; */
-    gap: 9px;
-    padding-top: 5px;
-}
-.card-actions .action-icon {
-    font-size: 20px;
+.card-phone .reactions-box {
+    flex-direction: column;
 }
 
 .reactions span {
@@ -214,4 +257,19 @@
 }
 .heart {
     background-color: rgb(216, 79, 79);
+}
+
+.card-actions {
+    gap: 9px;
+    padding-top: 5px;
+}
+.card-phone .card-actions {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.card-phone .card-actions .action-icon-box {
+    width: 45%;
+}
+.card-actions .action-icon {
+    font-size: 20px;
 }
