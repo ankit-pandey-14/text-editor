@@ -26,7 +26,7 @@ const reactions = [
     { key: 'R4', icon: 'heart', classes: 'heart' },
 ];
 
-const PreviewPostSection = () => {
+const PreviewPostSection = ({ post }) => {
     const [activeDevice, setActiceDevice] = useState('phone');
 
     return (
@@ -90,7 +90,7 @@ const PreviewPostSection = () => {
                     </div>
 
                     <div className="mt-5 card-content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, porro? Tempora quis, debitis earum vel dignissimos blanditiis corrupti, ullam provident veniam, tenetur molestias voluptatum iure rem repudiandae voluptates minima labore.
+                        { post }                        
                     </div>
 
                     <div className="mt-5 border-down d-flex justify-between gap-4 align-center p-y-14">
