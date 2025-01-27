@@ -28,7 +28,7 @@
 
 /* write post section styling */
 .write-post {
-    border: 1px solid blue;
+    border: 1px solid #ccc;
 }
 
 .write-post .profile {
@@ -70,7 +70,7 @@
 
 /* preview post section styling */
 .preview-section {
-    border: 1px solid green;
+    border: 1px solid #ccc;
 }
 
 .devices {

@@ -21,6 +21,10 @@ import { BsStars } from "react-icons/bs";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { MdTabletMac } from "react-icons/md";
 import { FaDesktop } from "react-icons/fa";
+import { HiOutlineAdjustments } from "react-icons/hi";
+import { GrFan } from "react-icons/gr";
+import { BsFillInfoCircleFill } from "react-icons/bs";
+import { AiFillThunderbolt } from "react-icons/ai";
 import { FaGlobeAmericas } from "react-icons/fa";
 import { AiOutlineLike } from "react-icons/ai";
 import { FaRegCommentDots } from "react-icons/fa";
@@ -52,6 +56,10 @@ const iconObj = {
     phone: <IoMdPhonePortrait />,
     tablet: <MdTabletMac />,
     desktop: <FaDesktop />,
+    preferences:<HiOutlineAdjustments />,
+    featureRequest:<GrFan />,
+    wordsGenerated:<BsFillInfoCircleFill />,
+    thunder: <AiFillThunderbolt />
     world: <FaGlobeAmericas />,
     like: <AiOutlineLike />,
     comment: <FaRegCommentDots />,
