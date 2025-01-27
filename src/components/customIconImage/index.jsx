@@ -37,7 +37,19 @@ import { FaTextSlash } from "react-icons/fa6";
 import { FaUnderline } from "react-icons/fa";
 import { AiOutlineLink } from "react-icons/ai";
 import { MdOutlineClose } from "react-icons/md";
-
+import { FaBrain } from "react-icons/fa";
+import { TbChecks } from "react-icons/tb";
+import { MdCompress } from "react-icons/md";
+import { SlSizeFullscreen } from "react-icons/sl";
+import { RxLoop } from "react-icons/rx";
+import { PiBabyLight } from "react-icons/pi";
+import { PiTextAaLight } from "react-icons/pi";
+import { LuPartyPopper } from "react-icons/lu";
+import { TbMicrophone2 } from "react-icons/tb";
+import { RiTranslate2 } from "react-icons/ri";
+import { AiFillSignal } from "react-icons/ai";
+import { PiLineSegmentsBold } from "react-icons/pi";
+import { MdArrowForwardIos } from "react-icons/md"
 
 // list of icons
 const iconObj = {
@@ -76,6 +88,19 @@ const iconObj = {
     underline: <FaUnderline />,
     link: <AiOutlineLink />,
     close: <MdOutlineClose />,
+    ai: <FaBrain />,
+    complete: <TbChecks />,
+    shorten: <MdCompress />,
+    extend: <SlSizeFullscreen />,
+    rephrase: <RxLoop />,
+    summarize: <AiFillSignal />,
+    tldr: <PiLineSegmentsBold />,
+    simplify: <PiBabyLight />,
+    spellingGrammar: <PiTextAaLight />,
+    emojify: <LuPartyPopper />,
+    toneOfVoice: <TbMicrophone2 />,
+    translate: <RiTranslate2 />,
+    rightArrow: <MdArrowForwardIos />
 };
 
 

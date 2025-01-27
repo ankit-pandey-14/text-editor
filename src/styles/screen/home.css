@@ -2,7 +2,7 @@
     height: 100%;
 }
 .home-screen-desktop {
-    grid-template-columns: 200px 1fr 2fr;
+    grid-template-columns: 250px 1fr 2fr;
 }
 .home-screen-tablet {
     grid-template-columns: 250px 1fr 1fr;
@@ -67,6 +67,37 @@
 .toolbar-icons {
     gap: 23px;
     color: #777;
+}
+
+
+.icon-container {
+    position: relative;
+}
+
+.toolbar-Ai {
+    border-left: 2px solid #ccc;
+    padding-left: 23px;
+}
+
+.ai-dropDown {
+    position: absolute;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
+    top: 35px;
+    left: 190px;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 8px;
+}
+
+.aiDropDown-icon {
+    font-size: 15px;
+}
+
+.item-text-size {
+    font-size: 17px;
 }
 
 .text-area-box {
