@@ -1,8 +1,24 @@
-# React + Vite
+# React Text Editor
+A simple text editor with some basic functionality
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
+- A simple text editor with basic functionality to bold, italic and underline texts.
+- It also shows you the preview of your notes in a card view format.
+- It even gives you the count of the characters you have typed.
 
-Currently, two official plugins are available:
+## Installation
+- node version : 22.13.1
+1. Clone the github repo from the below link
+    - https://
+2. cd text-editor
+3. Install all the packages
+    - npm install
+4. Run the development server
+    - npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project also involves **[html-react-parser package](https://www.npmjs.com/package/html-react-parser)** hence yo can go through its docs for further learnings.
+
+## Contribution
+**[Alka Savarn]**
+**[Github]()**
+**[LinkedIn]()**
