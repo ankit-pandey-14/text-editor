@@ -1,7 +1,7 @@
 export const countCharactersWithHTMLTags = (content) => {
-    console.log("content", content);
-    const textContent = content.replace(/<[^>]+>/g, '');
-    console.log("textContent", textContent);
+    let textContent = content?.length > 0
+                        ? content.replace(/&nbsp;/g, '').replace(/<[^>]+>/g, '')
+                        : '';
     
     return textContent.length;
 }
