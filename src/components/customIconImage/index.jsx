@@ -21,6 +21,14 @@ import { BsStars } from "react-icons/bs";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { MdTabletMac } from "react-icons/md";
 import { FaDesktop } from "react-icons/fa";
+import { FaGlobeAmericas } from "react-icons/fa";
+import { AiOutlineLike } from "react-icons/ai";
+import { FaRegCommentDots } from "react-icons/fa";
+import { LiaShareSolid } from "react-icons/lia";
+import { LuSend } from "react-icons/lu";
+import { PiHandsClapping } from "react-icons/pi";
+import { FaHandHoldingHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 
 
 // list of icons
@@ -44,6 +52,14 @@ const iconObj = {
     phone: <IoMdPhonePortrait />,
     tablet: <MdTabletMac />,
     desktop: <FaDesktop />,
+    world: <FaGlobeAmericas />,
+    like: <AiOutlineLike />,
+    comment: <FaRegCommentDots />,
+    share: <LiaShareSolid />,
+    sendTilted: <LuSend />,
+    clap: <PiHandsClapping />,
+    support: <FaHandHoldingHeart />,
+    heart: <FaRegHeart />, 
 };
 
 
