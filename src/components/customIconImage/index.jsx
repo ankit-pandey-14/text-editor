@@ -59,7 +59,7 @@ const iconObj = {
     preferences:<HiOutlineAdjustments />,
     featureRequest:<GrFan />,
     wordsGenerated:<BsFillInfoCircleFill />,
-    thunder: <AiFillThunderbolt />
+    thunder: <AiFillThunderbolt />,
     world: <FaGlobeAmericas />,
     like: <AiOutlineLike />,
     comment: <FaRegCommentDots />,
